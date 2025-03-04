@@ -1,0 +1,20 @@
+name: Run container-diff
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  container-diff:
+    runs-on: ['ubuntu-latest']
+    name: Run container-diff
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run container-diff
+        uses: GoogleContainerTools/container-diff/actions@master
+        with:
+          # Note this command is the default and does not need to be included
+          command: diff          
+          args: python:3.11-bullseye python:3.12-bullseye
+      - name: View output
+        run: cat ./data.json
