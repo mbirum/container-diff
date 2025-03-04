@@ -7,9 +7,14 @@ jobs:
   container-diff:
     runs-on: ['ubuntu-latest']
     container:
-      image: docker/dockerfile
+      image: docker
     name: Run container-diff
     steps:
+      - name: Docker Login
+        uses: docker/login-action@v3.3.0
+        with:
+          username: "${{ secrets.DOCKER_USER }}"
+          password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run container-diff
