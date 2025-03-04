@@ -22,6 +22,6 @@ jobs:
         with:
           # Note this command is the default and does not need to be included
           command: diff          
-          args: python:3.9-bullseye python:3.14-rc-bullseye --type=layer --output=./data.json --json
+          args: registry-1.docker.io/library/python:3.9-bullseye registry-1.docker.io/library/python:3.14-rc-bullseye --type=layer --output=./data.json --json
       - name: View output
         run: cat ./data.json
