@@ -15,6 +15,6 @@ jobs:
         with:
           # Note this command is the default and does not need to be included
           command: diff          
-          args: python:3.11-bullseye python:3.12-bullseye --output=./data.json --json
+          args: python:3.11-bullseye python:3.12-bullseye --type=file --output=./data.json --json
       - name: View output
         run: cat ./data.json
