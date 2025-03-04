@@ -7,7 +7,7 @@ jobs:
   container-diff:
     runs-on: ['ubuntu-latest']
     container:
-      image: docker
+      image: docker/dockerfile
     name: Run container-diff
     steps:
       - name: Checkout
